@@ -46,7 +46,7 @@ instance Ord Order where
   compare oa ob
           | oa == ob = EQ
           | orderSide oa == orderSide ob = case compare (orderPrice oa) (orderPrice ob) of
-                                            EQ -> compare (orderTime oa) (orderTime ob)
+                                            EQ -> compare (orderTime ob) (orderTime oa)
                                             GT -> case orderSide oa of
                                                        Bid -> GT
                                                        Ofr -> LT
